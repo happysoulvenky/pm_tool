@@ -1,0 +1,25 @@
+# Python cache
+__pycache__/
+*.pyc
+
+# Virtual environments and environment variables
+.env
+venv/
+.venv/
+env/
+
+# Editor and OS files
+.vscode/
+.DS_Store
+Thumbs.db
+
+# Local databases
+*.sqlite3
+*.db
+
+# Build output (just in case)
+build/
+dist/
+
+# Uncomment if you want to ignore images
+# images/

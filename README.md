@@ -5,14 +5,21 @@ This repository contains the **design (ERD + Class Diagram)**, **database schema
 
 ## Tech Stack
 
-- **Backend**: Flask (Python), SQLAlchemy
-- **Database**: SQLite by default (easily switchable to PostgreSQL/MySQL)
+- **Backend**: Flask (Python), SQLAlchemy, MySQL
+- **Database**: SQLite by default (easily switchable to PostgreSQL/MySQL) 
 - **Migrations**: Simple `create_all()` for demo; can be extended with Alembic
 - **API Docs**: Minimal examples below
 - **Diagrams**: Mermaid (ERD + Class Diagram) in `docs/`
 
 > This reference implementation focuses on correctness, clarity, and extensibility over UI polish. It exposes clean JSON APIs for internal use and can be paired with any admin UI (React/Next.js, Django Admin, Retool, etc.).
 
+The db instance is created using database.py
+
+if you are about to use sqlite3 change the database url and start migration , i used MySQL
+t
+For demo data database.py implements  sample data inside db 
+
+while testing make sure you are not usng the demo data to insertion -- it will through duplicate error
 ---
 
 ## 1) Diagrams
@@ -156,14 +163,7 @@ curl http://127.0.0.1:5000/products/1
 
 ---
 
-## 7) What to Submit
-
-- Push this folder to your GitHub repo.
-- Ensure `docs/erd.md`, `docs/class_diagram.md`, and `db/schema.sql` are present.
-- Include a short note in your PR/README explaining any enhancements you make.
-
-
-Justification for ERD Design
+## 7) Justification for ERD Design
 
 The database schema follows a normalized, flexible, and scalable design to support an internal product management tool.
 
