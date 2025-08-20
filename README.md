@@ -28,6 +28,7 @@ See `docs/` for Mermaid sources you can paste into any Mermaid renderer (includi
 
 - `docs/erd.md` — Entity Relationship Diagram
 - `docs/class_diagram.md` — Class Diagram (services/controllers/models)
+- `images/` - contanins .png file of both ER and Class Diagrams
 
 ---
 
