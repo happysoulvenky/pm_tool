@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Inventory Admin</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" />
+</head>
+<body>
+  <header>
+    <h1>Inventory Admin</h1>
+    <nav>
+      <button id="tab-categories" class="active">Categories</button>
+      <button id="tab-products">Products</button>
+    </nav>
+  </header>
+
+  <main id="app">
+    <!-- Dynamic content injected by JS -->
+    <section id="page-categories" class="page visible">
+      <div class="panel">
+        <h2>Categories</h2>
+
+        <form id="category-form" class="inline-form">
+          <input type="hidden" id="category-id" />
+          <input type="text" id="category-name" placeholder="Category name" required />
+          <input type="text" id="category-desc" placeholder="Description (optional)" />
+          <button id="category-save">Create</button>
+          <button id="category-cancel" type="button" class="secondary hidden">Cancel</button>
+        </form>
+
+        <div id="categories-list" class="list"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Attributes for Selected Category</h2>
+        <div id="selected-category-title">No category selected</div>
+
+        <form id="attribute-form" class="inline-form">
+          <input type="hidden" id="attr-cid" />
+          <input type="hidden" id="attr-id" />
+          <input type="text" id="attr-name" placeholder="Attribute name" required />
+          <input type="text" id="attr-values" placeholder="Possible values (comma separated)"/>
+          <button id="attr-save">Add Attribute</button>
+          <button id="attr-cancel" type="button" class="secondary hidden">Cancel</button>
+        </form>
+
+        <div id="attributes-list" class="list"></div>
+      </div>
+    </section>
+
+    <section id="page-products" class="page">
+      <div class="panel">
+        <h2>Products</h2>
+
+        <form id="product-form" class="inline-form">
+          <input type="hidden" id="product-id" />
+          <input type="text" id="product-name" placeholder="Product name" required />
+          <select id="product-category"></select>
+          <input type="text" id="product-price" placeholder="Price" />
+          <input type="text" id="product-desc" placeholder="Short description" />
+          <button id="product-save">Create Product</button>
+          <button id="product-cancel" type="button" class="secondary hidden">Cancel</button>
+        </form>
+
+        <div id="products-list" class="list"></div>
+      </div>
+
+      <div class="panel">
+        <h2>Set Attributes for Product</h2>
+        <div id="product-attributes-area">
+          <div id="selected-product-title">No product selected</div>
+          <form id="product-attributes-form">
+            <div id="product-attributes-rows"></div>
+            <button id="product-attributes-save" type="button">Save Attributes</button>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <small>Frontend for your Flask API — create / read / update / delete categories, attributes, products.</small>
+  </footer>
+
+  <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

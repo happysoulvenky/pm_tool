@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Categories</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Create Category</h1>
+    <form id="categoryForm">
+      <input type="text" id="catName" placeholder="Category Name" required>
+      <textarea id="catDesc" placeholder="Description"></textarea>
+      <button type="submit">Create</button>
+    </form>
+  <p id="catResponse"></p>
+  <ul id="categoryList"></ul>
+  </div>
+  <script src="{{ url_for('static', filename='js/categories.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Manage Products</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+  <div class="container">
+    <h1>Create Product</h1>
+    <form id="productForm">
+      <input type="text" id="prodName" placeholder="Product Name" required>
+      <input type="text" id="prodSku" placeholder="SKU" required>
+      <select id="prodCatId" required>
+        <option value="">Select Category</option>
+      </select>
+      <textarea id="prodDesc" placeholder="Description"></textarea>
+      <input type="number" step="0.01" id="prodPrice" placeholder="Price">
+      <input type="text" id="prodCurrency" placeholder="Currency (e.g. USD)">
+      <button type="submit">Create</button>
+    </form>
+  <p id="prodResponse"></p>
+  <label for="filterCategory">Filter by Category:</label>
+  <select id="filterCategory">
+    <option value="">All Categories</option>
+  </select>
+  <ul id="productList"></ul>
+
+  <div id="attributeSection" style="margin-top:2em;">
+    <h2>Set Product Attributes</h2>
+    <form id="productAttrForm" style="display:none;">
+      <div id="productAttrFields"></div>
+      <button type="submit">Save Attributes</button>
+    </form>
+  </div>
+  </div>
+  <script src="{{ url_for('static', filename='js/products.js') }}"></script>
+</body>
+</html>
